@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'hobbies_screen.dart';
+import 'pics_screen.dart';
 
 void main() {
   runApp(const ProfileApp());
@@ -75,6 +76,16 @@ class ProfileScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.photo),
               title: const Text('Favorite Pics'),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PicsScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),
@@ -163,8 +174,15 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 10),
 
               OutlinedButton(
-                onPressed: null,
-                child: Text('My Favorite Pics'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PicsScreen(),
+                    ),
+                  );
+                },
+                child: const Text('My Favorite Pics'),
               ),
             ],
           ),
