@@ -36,6 +36,39 @@ class ProfileScreen extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
 
+      drawer: Drawer(
+        child: Column(
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Navigation Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.palette),
+              title: const Text('My Hobbies'),
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.photo),
+              title: const Text('Favorite Pics'),
+            ),
+          ],
+        ),
+      ),
+
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
