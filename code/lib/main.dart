@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'hobbies_screen.dart';
 
 void main() {
   runApp(const ProfileApp());
@@ -59,6 +60,16 @@ class ProfileScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.palette),
               title: const Text('My Hobbies'),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HobbiesScreen(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
@@ -138,8 +149,15 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 28),
 
               ElevatedButton(
-                onPressed: null,
-                child: Text('My Hobbies'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HobbiesScreen(),
+                    ),
+                  );
+                },
+                child: const Text('My Hobbies'),
               ),
 
               const SizedBox(height: 10),
